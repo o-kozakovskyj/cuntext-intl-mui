@@ -67,7 +67,7 @@ export default function Header() {
                 <MenuItem key={lang.code} value={lang.code}>
                   <Avatar
                     src={lang.flag}
-                    sx={{ width: 16, height: 16 }}
+                    sx={{ width: 18, height: 18 }}
                     variant="square"
                     
                   />

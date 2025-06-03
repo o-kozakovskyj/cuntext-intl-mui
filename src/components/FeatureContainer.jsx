@@ -9,7 +9,7 @@ export default function FeatureContainer() {
 
   return (
     <Box sx={{ p: 2 }}>
-      <Typography variant="h1" gutterBottom>
+      <Typography variant="h4" gutterBottom>
         {intl.formatMessage({ id: "title" })}
       </Typography>
 

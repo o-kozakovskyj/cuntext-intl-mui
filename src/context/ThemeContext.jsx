@@ -5,7 +5,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 const ThemeContext = createContext();
 export const useCustomTheme = () => useContext(ThemeContext);
 
-// eslint-disable-next-line react/prop-types
 export const CustomThemeProvider = ({ children }) => {
   const [mode, setMode] = useState("light");
 
