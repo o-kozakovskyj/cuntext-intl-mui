@@ -12,6 +12,8 @@ import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useIntl } from "react-intl";
 import { useCustomTheme } from "../context/ThemeContext";
 import { Link } from "react-router";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
 
 const languages = [
   { code: "en", flag: "/flags/gb.png" },
@@ -19,16 +21,19 @@ const languages = [
 ];
 
 export default function Header() {
-  const { locale } = useParams();
+  const params = useParams()
+  const { locale } = params;
+const {setLocale} = useContext(LanguageContext)
   const intl = useIntl();
   const { toggleTheme } = useCustomTheme();
   const navigate = useNavigate();
   const location = useLocation();
-
+  
   const handleLanguageChange = (event) => {
     const newLocale = event.target.value;
     const newPath = location.pathname.replace(`/${locale}`, `/${newLocale}`);
     navigate(newPath);
+    setLocale(event.target.value);
   };
   return (
     <AppBar position="static">
