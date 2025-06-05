@@ -30,7 +30,6 @@ export default function Header() {
     const newPath = location.pathname.replace(`/${locale}`, `/${newLocale}`);
     navigate(newPath);
   };
-
   return (
     <AppBar position="static">
       <Toolbar>
